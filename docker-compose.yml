@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  bot:
+    build: bot/
+    container_name: ho-cyrhades-bot
+    command: npm start
+    healthcheck:
+      test: ["CMD", "wscat", "-c", "ws://localhost:8282"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+  webserver-1:
+    build: server_1/
+    ports:
+      - "80:80"
+    container_name: ho-webserver
