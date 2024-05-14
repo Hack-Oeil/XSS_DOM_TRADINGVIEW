@@ -14,5 +14,5 @@ services:
     build: server_1/
     restart: always
     ports:
-      - "80:80"
+      - ${PORT}:80
     container_name: ho-webserver
