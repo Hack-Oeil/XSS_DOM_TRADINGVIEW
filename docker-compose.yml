@@ -1,18 +1,23 @@
-version: '3.3'
+version: '3.9'
 services:
   bot:
-    build: bot/
+    build:
+      context: ./.docker/bot/
     restart: always
-    container_name: ho-cyrhades-bot
     command: npm start
+    labels:
+      ho.ctf.cyrhades: "1"
     healthcheck:
       test: ["CMD", "wscat", "-c", "ws://localhost:8282"]
       interval: 5s
       timeout: 3s
       retries: 10
   webserver-1:
-    build: server_1/
-    restart: always
+    build:
+      context: ./.docker/server_http/
+    environment:
+      - HOOS_CTF_USERNAME=${HOOS_CTF_USERNAME:-}
+    labels:
+      ho.ctf.cyrhades: "1"
     ports:
       - ${PORT}:80
-    container_name: ho-webserver

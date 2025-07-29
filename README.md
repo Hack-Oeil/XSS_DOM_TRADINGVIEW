@@ -2,7 +2,7 @@
 
 ## Présentation du CTF 
 **ID** 22 dans **les CTFs de Cyrhades**
-
+ 
 
 Récupérez le FLAG de validation en exploitant une faille XSS DOM.
 
@@ -12,7 +12,7 @@ et de se connecter avec pour obtenir le flag se trouvant sur la page d'accueil.
 
 
 ## Aperçu
-![infos/capture.jpg](infos/capture.jpg)
+![presentation/assets/images/capture.jpg](presentation/assets/images/capture.jpg)
 
 
 -----------
