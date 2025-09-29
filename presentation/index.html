@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="fr">
     <meta charset="UTF-8">
     <!--Page Title-->
@@ -7,89 +8,95 @@
     <!--Meta Keywords and Description-->
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    // Vérifie si la fenêtre est dans une iframe
-    if (window.self !== window.top) {
-        document.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', (event) => {
-            const a = event.target.closest('a[href^="http"]');
-            if (a) {
-            event.preventDefault();
-            window.parent.postMessage({
-                type: "open-external",
-                url: a.href
-            }, "*");
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
             }
         });
-        });
-    }
-    });
     </script>
 </head>
+
 <body>
 
-<div id="wrapper">
-    <!--Main Content Area-->
-    <main id="content">
-        <!--Ctf-->
-        <section class="ctf scrollto">
-            <div class="row clearfix">        
-                <div class="col-39">  
-                    <div class="section-heading">
-                        <h3>Challenge #22</h3>
-                        <h2 class="section-title">Xss DOM, Donnez votre langue au chat.</h2>
-                        <p>
-                            Récupérez le FLAG de validation en exploitant une faille XSS DOM.
-                            <br /><br />
-                            Dans ce challenge l'objectif est de récupérer les cookies de connexion du service technique 
-                            et de se connecter avec pour obtenir le flag se trouvant sur la page d'accueil.
-                        </p>
-                        <h4>Aperçu:</h4>
-                        <img class="capture" src="./assets/images/capture.jpg" alt="aperçu">
-                        <ul id="prerequisites" class="col-1">
-                            <li>Programmation JavaScript</li>              
-                        </ul>   
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <div class="row clearfix">
+                    <div class="col-39">
+                        <div class="section-heading">
+                            <h3>Challenge #22</h3>
+                            <h2 class="section-title">Xss DOM, Donnez votre langue au chat.</h2>
+                            <p>
+                                Récupérez le FLAG de validation en exploitant une faille XSS DOM.
+                                <br /><br />
+                                Dans ce challenge l'objectif est de récupérer les cookies de connexion du service
+                                technique
+                                et de se connecter avec pour obtenir le flag se trouvant sur la page d'accueil.
+                            </p>
+                            <h4>Aperçu:</h4>
+                            <img class="capture" src="./assets/images/capture.jpg" alt="aperçu">
+                            <ul id="prerequisites" class="col-1">
+                                <li>Programmation JavaScript</li>
+                            </ul>
+                        </div>
                     </div>
-                </div> 
-            </div>
-            <div class="row clearfix">        
-                <div class="col-39">  
-                    <div class="section-heading">
-                        <h3>Apprentissage</h3>
-                        <h2 class="section-title">Documentations et Vidéos</h2>
-                        <p class="section-subtitle">                           
-                            <a target="_blank" href="https://ctfs.cyrhades.fr/OWASP-CheatSheets/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html">
-                                <img src="./assets/images/link.png" />
-                                OWASP Prévention du Cross Site Scripting
-                            </a>
-                            <br />
-                        </p>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-39">
+                        <div class="section-heading">
+                            <h3>Apprentissage</h3>
+                            <h2 class="section-title">Documentations et Vidéos</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://ctfs.cyrhades.fr/OWASP-CheatSheets/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html">
+                                    <img src="./assets/images/link.png" />
+                                    OWASP Prévention du Cross Site Scripting
+                                </a>
+                                <br />
+                            </p>
+                        </div>
                     </div>
-                </div> 
-            </div>
+                </div>
 
-            <div class="row clearfix">        
-                <div class="col-39">  
-                    <div class="section-heading">
-                        <h3>Aide</h3>
-                        <h2 class="section-title">Conseils et indices</h2>
-                        <p class="section-subtitle">
-                            <a target="_blank" href="https://discord.com/channels/1175764392307077120/1176173464411979806">Fil sur le Discord</a>
-                        </p>
+                <div class="row clearfix">
+                    <div class="col-39">
+                        <div class="section-heading">
+                            <h3>Aide</h3>
+                            <h2 class="section-title">Conseils et indices</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Fil sur
+                                    le Discord</a>
+                            </p>
+                        </div>
                     </div>
-                </div> 
-            </div>
-        </section>
-        <!--End of Ctf-->
-    </main>
-    <!--End Main Content Area-->
+                </div>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
 
-    <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;" title="Remonter en tête de site"></a>
-</div>
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;" title="Remonter en tête de site"></a>
+    </div>
 </body>
+
 </html>
