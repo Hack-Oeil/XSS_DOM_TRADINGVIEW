@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <title>Tradingview</title>
+</head>
+<body>
+    <div class="tradingview-widget-container">
+        <div id="btn_bug"><a href="/contact">🐛 Déclarer un bogue</a></div>
+        <div id="container_tradingview"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+            /** START TradingView  **/
+            new TradingView.widget(
+                {
+                    "autosize": true,
+                    "symbol": "BITSTAMP:BTCUSD",
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": "light",
+                    "style": "1",
+                    "locale": "{{LANGUAGE}}",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "withdateranges": false,
+                    "hide_side_toolbar": false,
+                    "allow_symbol_change": true,
+                    "watchlist": [
+                        "BITSTAMP:ETHUSD",
+                        "BINANCE:BNBUSD"
+                    ],
+                    "details": false,
+                    "hotlist": false,
+                    "calendar": false,
+                    "studies": ["STD;EMA" ],
+                    "show_popup_button": false,
+                    "container_id": "container_tradingview"
+                }
+            );
+            /** END TradingView  **/
+        </script>
+    </div>
+</body>
+</html>

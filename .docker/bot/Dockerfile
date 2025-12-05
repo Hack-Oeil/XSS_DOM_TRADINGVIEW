@@ -1,16 +1,10 @@
-FROM node:18-slim
+FROM node:20-slim
 
-
-RUN apt-get update && apt-get install -y sudo wget gnupg gnupg2 gnupg1
-RUN npm install -g npm@9.6.3 wscat
-RUN apt-get update
-RUN apt-get install -y unzip npm
-
+RUN apt-get update && apt-get install -y sudo wget unzip
+RUN npm install -g npm@11.4.2 wscat
 
 # Création d'un utilisateur non privilégié et ajout au groupe sudo
-RUN useradd -m chromeuser && \
-    echo "chromeuser ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/nopasswd && \
-    usermod -aG sudo chromeuser
+RUN useradd -m chromeuser && echo "chromeuser ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/nopasswd && usermod -aG sudo chromeuser
 
 # installation de chrome
 RUN wget "https://chrome-versions.com/google-chrome-stable-114.0.5735.198-1.deb"
@@ -28,15 +22,9 @@ RUN export VERSION=$(google-chrome-stable --version | cut -d ' ' -f 3 | cut -d '
     chmod +x /usr/local/bin/chromedriver
 
 
-# Modification des permissions pour l'utilisateur non privilégié
-# RUN sudo chown -R chromeuser:chromeuser /opt/google/chrome
-
-
-
 WORKDIR /home/www
 COPY ./www /home/
 
 
 RUN cd ../ && npm install adm-zip && node /home/ho-wrapper.js
 RUN cd /home/www && npm install
-

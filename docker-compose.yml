@@ -1,18 +1,16 @@
-version: '3.9'
 services:
-  bot:
-    build:
-      context: ./.docker/bot/
+  botserver:
+    build: ./.docker/bot/
     restart: always
-    command: npm start
-    labels:
-      ho.ctf.cyrhades: "1"
     healthcheck:
-      test: ["CMD", "wscat", "-c", "ws://localhost:8282"]
+      test: [ "CMD", "wscat", "-c", "ws://localhost:8282" ]
       interval: 5s
       timeout: 3s
       retries: 10
-  webserver-1:
+    command: npm start
+    labels:
+      ho.ctf.cyrhades: "1"
+  web_apache:
     build:
       context: ./.docker/server_http/
     environment:

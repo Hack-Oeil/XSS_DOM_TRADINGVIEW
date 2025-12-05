@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Choix de langue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+        }
+        
+        .language-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .language-container .flag {
+            width: 200px;
+            height: 150px;
+            margin: 20px;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            transition: border-color 0.3s ease;
+        }
+        
+        .language-container .flag:hover {
+            border-color: #999;
+        }
+        
+        .language-container .flag img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choisissez votre langue</h1>
+    
+    <div class="language-container">
+        <a class="flag" href="/view?language=fr">
+            <img src="/assets/images/fr.png" alt="Drapeau français">
+        </a>
+        
+        <a class="flag" href="/view?language=en">
+            <img src="/assets/images/en.png" alt="Drapeau anglais">
+        </a>
+    </div>
+    
+    <hr>
+    <p>
+        Le flag sera affiché ici : {{FLAG}}
+    </p>
+</body>
+</html>
